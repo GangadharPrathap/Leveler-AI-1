@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Workout Plan</title>
+  <link rel="stylesheet" href="women.css" />
+</head>
+<body>
+  <video autoplay loop muted id="background-video">
+    <!-- <source src="../workout-bg.mp4" type="video/mp4">
+    <source src="../workout-bg-dark.mp4" type="video/mp4"> -->
+  </video>
+
+  <div id="levels-page" class="page active">
+    <div class="container">
+      <div class="level-card">
+        <h1>Select Your Fitness Level</h1>
+        <div class="level-buttons">
+          <button onclick="showDays('beginner')" class="level-btn beginner">Beginner</button>
+          <button onclick="showDays('intermediate')" class="level-btn intermediate">Intermediate</button>
+          <button onclick="showDays('advanced')" class="level-btn advanced">Advanced</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="days-page" class="page">
+    <div class="container">
+      <button onclick="backToLevels()" class="back-btn">← Back to Levels</button>
+      <h2 id="level-title" class="page-title"></h2>
+      <div class="days-card">
+        <h3>Choose Your Workout Day</h3>
+        <div class="days-buttons">
+          <button onclick="showWorkouts(1)">Day 1</button>
+          <button onclick="showWorkouts(2)">Day 2</button>
+          <button onclick="showWorkouts(3)">Day 3</button>
+          <button onclick="showWorkouts(4)">Day 4</button>
+          <button onclick="showWorkouts(5)">Day 5</button>
+          <button onclick="showWorkouts(6)">Day 6</button>
+          <button onclick="showWorkouts(7)">Day 7</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="workout-page" class="page">
+    <div class="container-wide">
+      <button onclick="backToDays()" class="back-btn">← Back to Days</button>
+
+      <div class="workout-header">
+        <h2 id="workout-title"></h2>
+        <div id="progress-badge" class="progress-badge"></div>
+      </div>
+
+      <div class="workout-layout">
+        <div class="workout-main">
+          <div class="workout-card">
+            <h3>Today's Exercises</h3>
+            <div id="workout-tasks"></div>
+          </div>
+        </div>
+        
+        <div class="progress-sidebar">
+          <div class="progress-card">
+            <h3>📊 Progress Tracker</h3>
+
+            <div class="overall-progress">
+              <div class="progress-header">
+                <span>Overall Progress</span>
+                <span id="progress-count">0/0</span>
+              </div>
+              <div class="progress-bar-container">
+                <div id="progress-bar" class="progress-bar"></div>
+              </div>
+              <p id="progress-percentage" class="progress-text">0% Complete</p>
+            </div>
+
+            <div class="exercise-checklist">
+              <h4>Exercise Checklist</h4>
+              <div id="exercise-list"></div>
+            </div>
+
+            <div id="completion-status" class="completion-status" style="display: none">
+              <div class="completion-content">
+                <div class="completion-icon">✅</div>
+                <p class="completion-title">Workout Complete!</p>
+                <p class="completion-subtitle">Great job finishing today's workout!</p>
+              </div>
+            </div>
+
+            <div class="quick-stats">
+              <div class="stat">
+                <div id="completed-count" class="stat-number">0</div>
+                <div class="stat-label">Completed</div>
+              </div>
+              <div class="stat">
+                <div id="remaining-count" class="stat-number">0</div>
+                <div class="stat-label">Remaining</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button id="theme-toggle" class="theme-toggle-btn">
+    <svg id="theme-toggle-light-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+    <svg id="theme-toggle-dark-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+  </button>
+
+  <script src="women.js"></script>
+</body>
+</html>
